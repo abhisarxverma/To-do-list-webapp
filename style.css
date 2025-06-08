@@ -1,0 +1,335 @@
+* {
+    box-sizing: border-box;
+}
+
+p, body {
+    margin: 0;
+    padding: 0;
+    font-family: "DM Sans";
+}
+
+body {
+    min-height: 100vh;
+    height: 100vh;
+    padding: 10px;
+    background-color: rgb(228, 228, 228);
+}
+
+.container {
+    height: 100%;
+    position: relative;
+}
+
+#your-tasks-heading {
+    font-size: 20px;
+    color: black;
+    width: 95%;
+    text-align: left;
+}
+
+.controls {
+    background-color: white;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    box-shadow: 2px 2px 10px  gray;
+    font-size: 30px;
+}
+
+.controls:hover {
+    /* height: 52px;
+    width: 52px; */
+    border: 5px solid blue;
+}
+
+.task-box {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    /* border: 2px solid black; */
+    gap: 10px;
+}
+
+.task-list {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.task-card {
+    box-shadow: 3px 5px 5px gray ;
+    background-color: white;
+    width: 85%;
+    min-height: 70px;
+    /* border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; */
+    border-radius: 30px;
+    padding: 15px 10px;
+    display: grid;
+    grid-template-columns: 5% 30% 1fr 25%;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+    border-left: 7px solid blue;
+    border-right: 7px solid blue;
+}
+
+/* .task-card:hover {
+    border: 1px solid black;
+} */
+
+.label {
+    font-size: 13px;
+    color: gray;
+}
+
+.task-title {
+    font-size: 25px;
+}
+
+.task-number {
+    font-size: 40px;
+    text-align: center;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70px;
+    font-size: 30px;
+    gap: 10px;
+}
+
+.task-text {
+    font-size: 23px;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.completed-action {
+    font-size: 33px;
+    width: 50px;
+    height: 50px;
+}
+
+.completed-action:hover {
+    border: 5px solid	#0FFF50;
+    /* box-shadow: 3px 3px 7px gray inset; */
+}
+
+.edit-task-action {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+}
+
+.edit-task-action:hover {
+    border: 5px solid #d6d912;
+}
+
+.delete-action {
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+}
+
+.delete-action:hover, .completed-delete-action:hover {
+    /* font-size: 22px; */
+    border: 3px solid red;
+    /* box-shadow: 3px 3px 7px gray inset; */
+}
+
+.uncomplete-action {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+}
+
+.uncomplete-action:hover {
+    border: 5px solid #9e9e9e;
+}
+
+.completed-delete-action {
+    font-size: 22px;
+    width: 35px;
+    height: 35px;
+}
+
+.actions i {
+    box-sizing: border-box;
+    border-radius: 50px;
+    background-color: white;
+    box-shadow: 2px 2px 3px gray ;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#new-task-header-title, #edit-task-header-title {
+    font-size: 25px;
+}
+
+#new-task-form .header, #edit-task-form .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#new-task-form .header i, #edit-task-form .header i {
+    font-size: 20px;
+}
+
+.new-task-form-div, .edit-task-form-div {
+    background-color: white;
+    padding: 20px 20px;
+    width: 500px;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto auto;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow: 20px 20px 50px 10px gray;
+}
+
+.hidden {
+    visibility: hidden; /* Keeps element space but hides visually */
+    opacity: 0; /* Makes it transparent */
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out; /* Smooth transition */
+}
+
+#new-task-form, #edit-task-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-box label {
+    font-size: 13px;
+    color: gray;
+}
+
+
+.input-box input {
+    padding: 5px 10px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    font-size: 17px;
+}
+
+.input-box input:focus {
+    outline: none;
+    border: 1px solid black;
+}
+
+#new-task-submit-button {
+    background-color: #005eff;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 10px;
+    font-size: 15px;
+}
+
+#edit-task-submit-button {
+    background-color: #d6d912;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 10px;
+    font-size: 15px;
+}
+
+#edit-task-submit-button:hover {
+    background-color: #c5c80f;
+}
+
+#new-task-submit-button:hover {
+    background-color: #0050db;
+}
+
+.content-box {
+    height: 100%;
+    border-left: 1px solid black;
+    padding: 0px 10px;
+}
+
+/* .task-card div:not(.task-card div:last-child){
+    border-right: 1px solid black;
+} */
+
+#completed-tasks-box-heading {
+    width: 95%;
+    text-align: left;
+    font-size: 20px;
+}
+
+.completed-tasks-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    /* border: 2px solid black; */
+    gap: 10px;
+}
+
+.completed-tasks-list {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    /* border: 2px solid black;  */
+}
+
+.completed-task {
+    border-left: 7px solid #0FFF50;
+    border-right: 7px solid #0FFF50;
+    color: gray;
+    /* box-shadow: 3px 3px 5px gray inset; */
+    /* background-color: #e9f2eb; */
+}

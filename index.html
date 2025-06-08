@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your To Do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Courgette&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Delius&family=Edu+SA+Hand:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merienda:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="tasks">
+            <p id="your-tasks-heading">Your Tasks</p>
+            <div class="task-list">
+
+                <!-- <div class="task-box">
+                    <div class="task-card">
+                        <div class="number"><p class="task-number">1</p></div>
+                        <div class="content-box title">
+                            <p class="label task-title-label">Title</p>
+                            <p class="task-title">Code Spray Thoughts</p>
+                        </div>
+                        <div class="content-box importance">
+                            <p class="label importance">Importance</p>
+                            <p class="task-text">Will make me a real developer</p>
+                        </div>
+                        <div class="content-box reward">
+                            <p class="label reward">Reward</p>
+                            <p class="task-text">Happiness</p>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <i class="fa-solid fa-check completed-action" style="color: #4dff00;"></i>
+                        <i class="fa-solid fa-pen edit-task-action" style="color: #d6d912;"></i>
+                        <i class="fa-regular fa-square-minus delete-action" style="color: #ff3300;"></i>                
+                    </div>
+                </div> -->
+            </div>
+            <div class="completed-tasks-box hidden">
+                <p id="completed-tasks-box-heading">Completed Tasks</p>
+                <div class="completed-tasks-list">
+        
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <i id="new-task-icon" class="fa-solid fa-plus" style="color: #005eff;"></i>
+        </div>
+
+        <div class="new-task-form-div hidden">
+            <form id="new-task-form">
+                <div class="header">
+                    <p id="new-task-header-title">Create New Task</p>
+                    <i id="new-task-form-cross" class="fa-regular fa-circle-xmark"></i>
+                </div>
+                <div class="title-box input-box">
+                    <label for="title">Task Title</label>
+                    <input id="new-task-title" type="text" placeholder="Prepare spray presentation.." name="title">
+                </div>
+
+                <div class="importance-box input-box">
+                    <label for="importance">Task Importance in your life</label>
+                    <input id="new-task-importance" type="text" placeholder="Will give me promotion.." name="importance">
+                </div>
+
+                <div class="reward-box input-box">
+                    <label for="reward">Reward After Completion</label>
+                    <input id="new-task-reward" type="text" name="reward" placeholder="Will watch Harry Potter movie..">
+                </div>
+
+                <button type="submit" id="new-task-submit-button">Add Task</button>
+            </form>
+        </div>
+
+        <div class="edit-task-form-div hidden">
+            <form id="edit-task-form">
+                <div class="header">
+                    <p id="edit-task-header-title">Edit Task</p>
+                    <i id="edit-task-form-cross" class="fa-regular fa-circle-xmark"></i>
+                </div>
+                <div class="title-box input-box">
+                    <label for="title">Task Title</label>
+                    <input id="edit-task-title" type="text" placeholder="Prepare spray presentation.." name="title">
+                </div>
+
+                <div class="importance-box input-box">
+                    <label for="importance">Task Importance in your life</label>
+                    <input id="edit-task-importance" type="text" placeholder="Will give me promotion.." name="importance">
+                </div>
+
+                <div class="reward-box input-box">
+                    <label for="reward">Reward After Completion</label>
+                    <input id="edit-task-reward" type="text" name="reward" placeholder="Will watch Harry Potter movie..">
+                </div>
+
+                <button type="submit" id="edit-task-submit-button">Save Changes</button>
+            </form>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
