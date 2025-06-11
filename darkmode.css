@@ -1,0 +1,108 @@
+body {
+    background-color: black;
+}
+
+ #your-tasks-heading, #completed-tasks-box-heading {
+    color: lightgray  ;
+}
+.no-task-text, .no-task-smile {
+    color: white;
+}
+
+.new-task-form-div, .edit-task-form-div {
+    box-shadow: 3px 3px 10px gray;
+    background-color: lightgray;
+}
+
+#edit-task-submit-button {
+    background-color: 	#FDDA0D;
+}
+
+#edit-task-submit-button:hover {
+    background-color: 	#e2c106
+}
+
+.new-task-form-div label, .edit-task-form-div label {
+    color: black;
+}
+
+.task-card {
+    background-color: rgb(58, 58, 58);
+    /* box-shadow: 3px 3px 6px  gray; */
+    box-shadow: none;
+}
+
+.task-card:not(.completed-task) {
+    border-left : 7px solid #007FFF;
+    border-right: 7px solid #007FFF;
+}
+
+.number {
+    color: white;
+}
+
+.content-box {
+    color: white;
+    border-left: 1px solid white;
+}
+
+.actions i, #new-task-icon, #night-mode-icon {
+    /* background-color: rgb(87, 87, 87); */
+    /* box-shadow: 2px 2px 2px gray; */
+    box-shadow: none;
+    background-color: black;
+}
+
+#new-task-icon {
+    border: 3px solid #007FFF;
+}
+
+.completed-action {
+    border: 3px solid #0FFF50;
+}
+
+.edit-task-action {
+    border: 2px solid #e2c106;
+    color: #e2c106;
+}
+
+.delete-action {
+    border: 2px solid red;
+}
+
+.uncomplete-action {
+    border: 4px solid gray;
+}
+
+.completed-delete-action {
+    border: 2px solid red;
+}
+
+#new-task-icon {
+    color: #007FFF;
+}
+
+#new-task-icon:hover {
+    border: 5px solid #007FFF;
+}
+
+.view-mode-icon i {
+    background-color: rgb(42, 42, 42);
+}
+
+.view-mode-icon i {
+    color: white;
+}
+
+.view-mode-icon i:hover {
+    border: 3px solid white;
+}
+
+.label {
+    color: lightgray;
+    font-weight: 400;
+}
+
+.completed-task .content-box {
+    color: rgb(208, 208, 208);
+}   

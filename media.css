@@ -1,0 +1,302 @@
+@media (max-width: 400px) {
+    .task-list, .completed-tasks-list{
+        padding: 0;
+    }
+    .task-text {
+        font-size: 10px;
+    }
+    .task-title {
+        font-size: 11px;
+    }
+    .task-number {
+        font-size: 26px;
+    }
+    .task-box {
+        gap: 0px;
+    }
+    .task-card{
+        width: 100%;
+        flex-direction: column;
+    }
+    #new-task-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+    }
+    .content-box {
+        padding-left: 5px;
+    }
+    .completed-task .task-number {
+        font-size: 20px;
+    }
+    .new-task-form-div {
+        height: 300px;
+    }
+    .actions i {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+    .controls {
+        right:0px;
+    }
+    .controls i{
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+    }
+}
+
+/* Extra Small devices (Phones) */
+@media (min-width: 400px) and (max-width: 576px) {
+    /* .tasks {
+        background-color: blue;
+    } */
+    .task-text {
+        font-size: 15px;
+    }
+    .task-title {
+        font-size: 18px;
+    }
+    .task-number {
+        font-size: 26px;
+    }
+    .task-box {
+        gap: 8px;
+    }
+    .task-card{
+        width: 100%;
+    }
+    .task-list, .completed-tasks-list {
+        padding-right: 10px;
+        padding-left : 0;
+    }
+    #new-task-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    /* .completed-action {
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+    }
+    .edit-task-action {
+        width: 26px;
+        height: 26px;
+        font-size: 12px;
+    }
+    .delete-action {
+        width: 22px;
+        height: 22px;
+        font-size: 8px;
+    }
+    .view-mode-icon i{
+        width: 28px;
+        height: 28px;
+        font-size: 13px;
+    }
+    .view-mode-icon i:hover {
+        border: 3px solid white;
+    }
+    .uncomplete-action {
+        width: 33px;
+        height: 33px;
+        font-size: 15px;
+    }
+    .completed-delete-action {
+        width: 22px;
+        height: 22px;
+        font-size: 8px;
+    } */
+}
+
+@media (max-width: 650px){
+    
+    .task-card {
+        cursor: pointer;
+    }
+    .actions i{
+        height: 40px;
+        width: 40px;
+        font-size: 20px;
+    }
+    .new-task-form-div, .edit-task-form-div {
+        padding: 0px;
+        height: 400px;
+    }
+    #new-task-form, #edit-task-form {
+        justify-content: center;
+    }
+    .actions {
+        /* visibility: hidden; */
+        position: absolute;
+    }
+    .task-card {
+        width: 100%;
+    }
+    .no-task-text {
+        gap: 0px;
+        padding-right: 70px;
+        margin-left: 15px;
+    }
+    .label {
+        font-size: 10px;
+    }
+    .task-title {
+        font-size: 15px;
+    }
+    .task-text {
+        font-size: 13px;
+    }
+
+    .actions i{
+        width: 35px;
+        height: 35px;
+    }
+
+    #new-task-icon {
+        padding: 0;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Small devices (Tablets) */
+@media (min-width: 576px) and (max-width: 768px) {
+    /* .tasks {
+        background-color: green;
+    } */
+    .task-text {
+        font-size: 15px;
+    }
+    .task-title {
+        font-size: 18px;
+    }
+    .task-number {
+        font-size: 26px;
+    }
+    .task-box {
+        gap: 12px;
+    }
+    .task-list, .completed-tasks-list {
+        padding: 0px 10px;
+    }
+    #new-task-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    /* .completed-action {
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+    }
+    .edit-task-action {
+        width: 26px;
+        height: 26px;
+        font-size: 12px;
+    }
+    .delete-action {
+        width: 22px;
+        height: 22px;
+        font-size: 8px;
+    }
+    .view-mode-icon i{
+        width: 28px;
+        height: 28px;
+        font-size: 13px;
+    }
+    .view-mode-icon i:hover {
+        border: 3px solid white;
+    }
+    .uncomplete-action {
+        width: 33px;
+        height: 33px;
+        font-size: 15px;
+    }
+    .completed-delete-action {
+        width: 22px;
+        height: 22px;
+        font-size: 8px;
+    } */
+}
+
+/* Medium devices (Laptops, Small Desktops) */
+@media (min-width: 768px) and (max-width: 992px) {
+    /* .tasks {
+        background-color: green;
+    } */
+    .task-list, .completed-tasks-list {
+        padding: 0px 10px;
+    }
+    .task-box {
+        gap: 18px;
+    }
+    .task-text {
+        font-size: 18px;
+    }
+    .task-title {
+        font-size: 20px;
+    }
+    .task-number {
+        font-size: 29px;
+    }
+    #new-task-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    .view-mode-icon i{
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+    }
+    .completed-action {
+        width: 35px;
+        height: 35px;
+        font-size: 17px;
+    }
+    .edit-task-action {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+    .delete-action {
+        width: 24px;
+        height: 24px;
+        font-size: 10px;
+    }
+    .uncomplete-action {
+        width: 35px;
+        height: 35px;
+        font-size: 17px;
+    }
+    .completed-delete-action {
+        width: 24px;
+        height: 24px;
+        font-size: 10px;
+    }
+}
+
+/* Large devices (Desktops, Large Screens) */
+@media (min-width: 992px) and (max-width: 1200px) {
+    /* .tasks {
+        background-color: red;
+    } */
+    .task-box {
+        gap: 10px;
+    }
+    .task-text {
+        font-size: 20px;
+    }
+    .task-title {
+        font-size: 23px;
+    }
+    .task-number {
+        font-size: 33px;
+    }
+}
+
+/* Extra Large devices (Large Screens, 4K Displays) */
+@media (max-width: 1400px) {}

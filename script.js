@@ -7,6 +7,7 @@ class Task{
     }
 }
 
+let isNightMode = false
 const newTaskForm = document.querySelector(".new-task-form-div")
 const newTaskIcon = document.querySelector("#new-task-icon")
 const container = document.querySelector(".container")
@@ -17,6 +18,8 @@ const rewardInput = document.querySelector("#new-task-reward")
 const completedTasksList = document.querySelector(".completed-tasks-list")
 const completedTasksBox = document.querySelector(".completed-tasks-box")
 const editTaskForm = document.querySelector(".edit-task-form-div")
+const nightModeIcon = document.querySelector("#night-mode-icon")
+const viewModeIcon = document.querySelector(".view-mode-icon")
 
 const editTaskTitleInput = document.querySelector("#edit-task-title")
 const editTaskImportanceInput = document.querySelector("#edit-task-importance")
@@ -28,6 +31,8 @@ const completedTasks = getTasks("completed_tasks")
 renderTasksFromArray(tasks)  // Render the pending tasks
 renderCompletedTasks()
 checkIfTasks()              // If not pending tasks then show the no task text
+actionsMedia()
+// showAllActions()
 
 // Open new task form eventlistener
 newTaskIcon.addEventListener("click", function() {
@@ -106,6 +111,73 @@ editTaskForm.addEventListener("submit", function(event) {
 
 })
 
+viewModeIcon.addEventListener("click", function() {
+    toggleCSS("darkmode.css")
+    if (!isNightMode) viewModeIcon.innerHTML = `<i class="fa-regular fa-sun" style="color: #ffffff;"></i>`
+    else viewModeIcon.innerHTML = `<i id="night-mode-icon" class="fa-solid fa-moon"></i>`
+    isNightMode = !isNightMode
+})
+
+window.addEventListener("resize", function () {
+    actionsMedia()
+});
+
+function showAllActions() {
+    let allActions =  document.querySelectorAll(".actions")
+    allActions.forEach((actions) => {
+        actions.classList.add("visible")
+        actions.style.position = "relative"
+        actions.style.top = "0px"
+        actions.style.right = "0px"
+    })
+}
+
+function hideAllActions() {
+    let allActions = document.querySelectorAll(".actions")
+        allActions.forEach((actions) => {
+            actions.classList.add("hidden")
+            actions.style.position = "absolute"
+            actions.style.top = "-5px"
+            actions.style.right = "110px"
+            actions.style.zIndex = "10"
+        })
+}
+
+function actionsMedia () {
+    let screenWidth = window.innerWidth;
+    
+    if (screenWidth <= 650) {
+        console.log("Mobile view detected");
+        hideAllActions()
+        
+        let allTaskCards = document.querySelectorAll(".task-card")
+        allTaskCards.forEach((taskCard) => {
+            taskCard.addEventListener("click", function(event) {
+                if (screenWidth <= 650){
+                    hideAllActions()
+                    taskCard.style.width = "100%"
+                    let taskNumber = taskCard.getAttribute("data-task-number")
+                    taskNumber = parseInt(taskNumber, 10)
+                    let actions = document.querySelector(`.actions[data-task-number="${taskNumber}"]`)
+                    // console.log(actions.innerHTML)
+                    actions.style.zIndex = "100"
+                    actions.classList.remove("hidden")
+                }
+
+            })
+        })
+    } else {
+        console.log("Desktop view detected");
+        let allActions = this.document.querySelectorAll(".actions")
+        allActions.forEach((actions) => {
+            actions.classList.remove("hidden")
+            actions.style.position = "relative"
+            actions.style.top = "0px"
+            actions.style.right = "0px"
+        })
+    }
+}
+
 function toggleVisibility(element) {
     element.classList.toggle("hidden");
     element.classList.toggle("visible");
@@ -119,7 +191,12 @@ function checkIfTasks() {
         if (!existingNoTaskText) {
             const noTaskText = document.createElement("h1");
             noTaskText.classList.add("no-task-text"); 
-            noTaskText.textContent = "No Tasks For Now.";
+            noTaskText.textContent = "No Tasks For Now.  Enjoy";
+            noTaskText.innerHTML += `<i class=\"fa-solid fa-face-smile-wink no-task-smile\" ></i>`
+            noTaskText.style.display = "flex"
+            noTaskText.style.gap = "20px"
+            noTaskText.style.alignItems= "center"
+            noTaskText.style.marginLeft = "5px"
             taskList.appendChild(noTaskText);
         }
     } else {
@@ -153,7 +230,7 @@ function getTasks(key){
 function addNewTask(div, taskNumber, title, importance, reward) {
     const task = `
                 <div class="task-box">
-                    <div class="task-card">
+                    <div class="task-card" data-task-number="${taskNumber}">
                         <div class="number"><p class="task-number">${taskNumber}</p></div>
                         <div class="content-box title">
                             <p class="label task-title-label">Title</p>
@@ -168,7 +245,7 @@ function addNewTask(div, taskNumber, title, importance, reward) {
                             <p class="task-text">${reward}</p>
                         </div>
                     </div>
-                    <div class="actions">
+                    <div class="actions" data-task-number="${taskNumber}">
                         <i title="Mark complete" data-task-number = "${taskNumber-1}" class="fa-solid fa-check completed-action" style="color: #4dff00;"></i>
                         <i title="Edit this task" data-task-number="${taskNumber-1}" class="fa-solid fa-pen edit-task-action" style="color: #d6d912;"></i>
                         <i title="Double click to Remove task" data-task-number = "${taskNumber-1}" class="fa-regular fa-square-minus delete-action" style="color: #ff3300;"></i>                
@@ -182,7 +259,7 @@ function addNewTask(div, taskNumber, title, importance, reward) {
 function addCompletedTask(div, title, taskNumber, importance, reward){
     const task = `
     <div class="task-box">
-        <div class="task-card completed-task">
+        <div class="task-card completed-task" data-task-number="2${taskNumber}">
             <div class="number"><p class="task-number"><i class="fa-solid fa-check " style="color: #0FFF50;"></i></p></div>
             <div class="content-box title">
                 <p class="label task-title-label">Title</p>
@@ -197,7 +274,7 @@ function addCompletedTask(div, title, taskNumber, importance, reward){
                 <p class="task-text">${reward}</p>
             </div>
         </div>
-        <div class="actions">
+        <div class="actions" data-task-number="2${taskNumber}">
             <i title="Mark uncomplete" data-task-number = "${taskNumber-1}" class="fa-solid fa-xmark uncomplete-action" style="color: #9e9e9e;"></i>
             <i title="Double click to Remove task" data-task-number = "${taskNumber-1}" class="fa-regular fa-square-minus completed-delete-action" style="color: #ff3300;"></i>                
         </div>
@@ -260,6 +337,7 @@ function renderCompletedTasks(){
         }
         addMarkUncompleteEventListeners()
         addCompletedDeleteActionEventListeners()
+        actionsMedia()
     } 
 }
 
@@ -282,6 +360,7 @@ function addCompletedEventListeners() {
                 renderCompletedTasks()
                 renderTasksFromArray(tasks)
                 checkIfTasks()
+                actionsMedia()
             }
         });
     }
@@ -307,6 +386,7 @@ function addMarkUncompleteEventListeners() {
                 saveTasks("completed_tasks", completedTasks)
                 renderTasksFromArray(tasks)
                 renderCompletedTasks()
+                actionsMedia()
             }
         })
     }
@@ -327,6 +407,7 @@ function addCompletedDeleteActionEventListeners() {
                 completedTasks.splice(indexToDelete, 1)
                 saveTasks("completed_tasks", completedTasks)
                 renderCompletedTasks()
+                actionsMedia()
             }
         })
     }
@@ -352,8 +433,33 @@ function addEditTaskEventListeners() {
                 editTaskRewardInput.value = task.reward
                 editTaskForm.setAttribute("data-task-number", `${indexToEdit}`)
                 toggleVisibility(editTaskForm)
+                actionsMedia()
             }
         })
     }
 }
 
+function addCSS(file) {
+    let link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = file; // Path to your CSS file
+    document.head.appendChild(link);
+}
+
+function removeCSS(file) {
+    let links = document.querySelectorAll("link[rel='stylesheet']");
+    links.forEach(link => {
+        if (link.href.includes(file)) {
+            link.remove();
+        }
+    });
+}
+
+function toggleCSS(file) {
+    let exists = document.querySelector(`link[href*='${file}']`);
+    if (exists) {
+        removeCSS(file);
+    } else {
+        addCSS(file);
+    }
+}
