@@ -1,11 +1,10 @@
 # Your To-Do List 🗂️
-***It will not cover your screen with logo, navigation bars and selling paid plans. It's as like a most simple to do list ever. That will truly remind you the importance of the task.***
+***This isn't overloaded with heavy navbars, logos, or headers. Just a focused task interface that gives you clarity — nothing more, nothing less. That will truly remind you the importance of the task.***
 
 A clean, no-fluff to-do list web app built from scratch using **vanilla JavaScript** and **traditional CSS**.  
 Made for myself — the kind of simple tool I wanted to actually use daily.
 
-This isn't overloaded with heavy navbars, logos, or headers.  
-Just a focused task interface that gives you clarity — nothing more, nothing less.
+### Live site - [Visit Your To-Do List Webapp](https://your-to-list-app.netlify.app/)
 
 ---
 
